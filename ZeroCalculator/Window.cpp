@@ -102,37 +102,46 @@ void Window::updateLabel()
 				 
 				break;
 			case '-':
-				if (m_manager.getAlreadyNumber())
+				if (list.length() < 2)
 				{
-					m_manager.setOperator('-');
-					if (!m_displayLabel->text().contains("-") && !m_displayLabel->text().contains("+") && !m_displayLabel->text().contains("*") && !m_displayLabel->text().contains("/"))
-						m_displayLabel->setText(m_displayLabel->text() + "-");
-					else 
-						m_displayLabel->setText(m_displayLabel->text().mid(0, m_displayLabel->text().length() - 1) + "-");
+					if (m_manager.getAlreadyNumber())
+					{
+						m_manager.setOperator('-');
+						if (!m_displayLabel->text().contains("-") && !m_displayLabel->text().contains("+") && !m_displayLabel->text().contains("*") && !m_displayLabel->text().contains("/"))
+							m_displayLabel->setText(m_displayLabel->text() + "-");
+						else
+							m_displayLabel->setText(m_displayLabel->text().mid(0, m_displayLabel->text().length() - 1) + "-");
+					}
 				}
-		 
+
 				break;
 			case '*':
-				if (m_manager.getAlreadyNumber())
+				if (list.length() < 2)
 				{
-					m_manager.setOperator('*');
-					if (!m_displayLabel->text().contains("-") && !m_displayLabel->text().contains("+") && !m_displayLabel->text().contains("*") && !m_displayLabel->text().contains("/"))
-						m_displayLabel->setText(m_displayLabel->text() + "*");
-					else 
-						m_displayLabel->setText(m_displayLabel->text().mid(0, m_displayLabel->text().length() - 1) + "*");
-
+					if (m_manager.getAlreadyNumber())
+					{
+						m_manager.setOperator('*');
+						if (!m_displayLabel->text().contains("-") && !m_displayLabel->text().contains("+") && !m_displayLabel->text().contains("*") && !m_displayLabel->text().contains("/"))
+							m_displayLabel->setText(m_displayLabel->text() + "*");
+						else
+							m_displayLabel->setText(m_displayLabel->text().mid(0, m_displayLabel->text().length() - 1) + "*");
+					}
 				}
+				 
 				break;
 			case '/':
-				if (m_manager.getAlreadyNumber())
+				if (list.length() < 2)
 				{
-					m_manager.setOperator('/');
-					if (!m_displayLabel->text().contains("-") && !m_displayLabel->text().contains("+") && !m_displayLabel->text().contains("*") && !m_displayLabel->text().contains("/"))
-						m_displayLabel->setText(m_displayLabel->text() + "/");
-					else 
-						m_displayLabel->setText(m_displayLabel->text().mid(0, m_displayLabel->text().length() - 1) + "/");
-
+					if (m_manager.getAlreadyNumber())
+					{
+						m_manager.setOperator('/');
+						if (!m_displayLabel->text().contains("-") && !m_displayLabel->text().contains("+") && !m_displayLabel->text().contains("*") && !m_displayLabel->text().contains("/"))
+							m_displayLabel->setText(m_displayLabel->text() + "/");
+						else
+							m_displayLabel->setText(m_displayLabel->text().mid(0, m_displayLabel->text().length() - 1) + "/");
+					}
 				}
+				 
 				break;
 			case '=':
 
